@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <title>ImageCard</title>
+  </head>
+  <body>
+    <div class="card">
+      <div class="image">
+        <img src="photo.jpg">
+
+      </div>
+      <div class="content">
+        <div class="title">
+          Card Hover
+        </div>
+        <div class="sub-title">
+          HTML-CSS
+        </div>
+        <div class="bottom">
+          <p>Lorem ipsum dolor sit amet,
+            consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua.
+            Ut enim ad minim veniam,
+             quis nostrud exercitation ullamco laboris nisi
+             ut aliquip ex ea commodo consequat.</p>
+             <button>Read More</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+          $('.card').hover(function(){
+            if($(this).hasClass("active")){
+              $('.card .bottom').slideUp(function(){
+                $('.card').removeClass("active");
+              });
+            }else
+            {
+              $('.card').addClass("active");
+              $('.card .bottom').stop().slideDown();
+            }
+          });
+    </script>
+
+
+  </body>
+</html>
